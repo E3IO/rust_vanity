@@ -1,0 +1,28 @@
+[package]
+name = "rust_vanity"
+version = "0.1.0"
+edition = "2021"
+description = "Vanity address generator for ed25519 keys with CUDA support"
+
+[dependencies]
+rand = "0.8"
+sha2 = "0.10"
+ed25519-dalek = { version = "2.0", features = ["rand_core"] }
+bs58 = "0.5"
+hex = "0.4"
+rayon = "1.7"
+clap = { version = "4.3", features = ["derive"] }
+log = "0.4"
+env_logger = "0.10"
+chrono = "0.4"
+anyhow = "1.0"
+rustacuda = "0.1.3"
+rustacuda_core = "0.1.2"
+rustacuda_derive = "0.1"
+
+[build-dependencies]
+cmake = "0.1"
+
+[features]
+default = ["cuda"]
+cuda = []

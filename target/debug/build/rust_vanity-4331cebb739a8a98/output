@@ -1,0 +1,6 @@
+cargo:rustc-link-search=native=/usr/local/cuda/lib64
+cargo:rustc-link-lib=dylib=cudart
+cargo:rustc-link-lib=dylib=cuda
+cargo:rustc-link-lib=dylib=curand
+cargo:rerun-if-changed=src/cuda
+cargo:rerun-if-env-changed=CUDA_PATH
